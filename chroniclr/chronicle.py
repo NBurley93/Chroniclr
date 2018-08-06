@@ -6,6 +6,10 @@ class Chronicle(object):
     def __init__(self):
         self.data = {}
 
+
+    def isEmpty(self):
+        return (len(self.data.keys()) <= 0)
+
     
     def write(self, filePath: str):
         with open(filePath, 'w', encoding='utf-8') as cFile:
