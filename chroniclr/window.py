@@ -135,10 +135,14 @@ class AppWindow(object):
 
 
     def handleBtn_Export(self):
-        self.gui.infoBox(
-            title='Information',
-            message='Sorry, exporting is not implemented yet! :c'
+        # Export as
+        fn = self.gui.saveBox(
+            title='Export Chronicle',
+            fileTypes=[('HTML Document', '*.html')]
         )
+        if not fn == '':
+            self.chr.htmlExport(fn)
+            print('Exported chronicle to {0}'.format(fn))
 
 
     def handleBtn_Load(self):
